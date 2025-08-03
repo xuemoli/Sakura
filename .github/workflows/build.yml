@@ -36,7 +36,8 @@ jobs:
             --enable-plugin=pyqt5 `
             --output-dir=dist `
             --main=wincleaner.py `
-            --windows-icon-from-ico=icon.ico
+            --windows-icon-from-ico=icon.ico `
+            --assume-yes-for-downloads
 
       - name: Copy resource folder
         run: |
