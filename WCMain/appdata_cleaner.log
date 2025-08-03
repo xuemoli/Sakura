@@ -1,0 +1,17 @@
+03:19:21 [INFO] 应用程序启动
+03:19:21 [INFO] 未找到配置文件，使用默认配置
+03:19:21 [INFO] [系统] AI处理器 - 初始化处理器，使用模型: glm-4-flash
+03:19:21 [ERROR] 加载 YAML 文件失败: YAML 文件未找到
+03:19:24 [INFO] 开始扫描 Roaming 类型的文件夹
+03:19:44 [INFO] [描述生成] Roaming:kingsoft - 开始处理
+03:19:44 [INFO] [API] Roaming:kingsoft - 开始生成文件夹描述
+03:19:44 [ERROR] [API] Roaming:kingsoft - 响应失败: HTTP 401 Unauthorized - {"error":{"code":"401","message":"令牌已过期或验证不正确"}}
+03:19:44 [WARN] [API] Roaming:kingsoft - 请求失败 (尝试 1/3): API请求失败: 401 Unauthorized - {"error":{"code":"401","message":"令牌已过期或验证不正确"}}，将在 20s 后重试
+03:20:04 [ERROR] [API] Roaming:kingsoft - 响应失败: HTTP 401 Unauthorized - {"error":{"code":"401","message":"令牌已过期或验证不正确"}}
+03:20:04 [WARN] [API] Roaming:kingsoft - 请求失败 (尝试 2/3): API请求失败: 401 Unauthorized - {"error":{"code":"401","message":"令牌已过期或验证不正确"}}，将在 20s 后重试
+03:20:18 [INFO] 开始扫描 Local 类型的文件夹
+03:20:24 [ERROR] [API] Roaming:kingsoft - 响应失败: HTTP 401 Unauthorized - {"error":{"code":"401","message":"令牌已过期或验证不正确"}}
+03:20:24 [ERROR] [API] Roaming:kingsoft - 达到最大重试次数 3/3
+03:20:24 [ERROR] [描述生成] Roaming:kingsoft - 生成失败: 达到最大重试次数 3: API请求失败: 401 Unauthorized - {"error":{"code":"401","message":"令牌已过期或验证不正确"}}
+03:20:24 [ERROR] 生成描述失败: 达到最大重试次数 3: API请求失败: 401 Unauthorized - {"error":{"code":"401","message":"令牌已过期或验证不正确"}}
+03:20:47 [INFO] 开始扫描 LocalLow 类型的文件夹

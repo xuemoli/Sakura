@@ -1,0 +1,20 @@
+{
+    "includePath": [
+        "H:\\Documents\\Example123",
+        "H:\\Projects\\Temp\\UnusedData",
+        "H:\\Temp\\Logs\\Unused"
+    ],
+    "version": 8,
+    "language": "\u7b80\u4f53\u4e2d\u6587",
+    "theme": 2,
+    "themeColor": "#009faa",
+    "AutoRunEnabled": "False",
+    "closeEvent": 0,
+    "update": 0,
+    "AutoCleanEnabled": "False",
+    "AutoCleanMode": 0,
+    "AutoCleanTime": 1,
+    "AutoCleanRoom": 1,
+    "AutoUpdate": "2025-06-21",
+    "LastCleanTime": "2025-06-27"
+}

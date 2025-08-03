@@ -1,0 +1,63 @@
+name: Build WinCleaner
+
+on:
+  push:           # 每次 push 触发
+  workflow_dispatch:   # 也可在 Actions 页面手动点 Run
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python 3.8
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.8'
+
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Install Nuitka (with cache)
+        run: |
+          pip install nuitka
+          python -m nuitka --version   # 触发下载 clcache/depends
+
+      - name: Build exe with Nuitka
+        run: |
+          python -m nuitka `
+            --standalone `
+            --windows-uac-admin `
+            --remove-output `
+            --windows-console-mode=disable `
+            --enable-plugin=pyqt5 `
+            --output-dir=dist `
+            --main=wincleaner.py `
+            --windows-icon-from-ico=icon.ico
+
+      - name: Copy resource folder
+        run: |
+          xcopy "WCMain" "dist\wincleaner.dist\WCMain\" /E /I /Y
+
+      - name: Install Inno Setup
+        run: |
+          choco install innosetup --no-progress -y
+
+      - name: Build installer
+        run: |
+          "%programfiles(x86)%\Inno Setup 6\ISCC.exe" script.iss
+
+      - name: Upload artifacts (portable exe)
+        uses: actions/upload-artifact@v4
+        with:
+          name: artifacts-main
+          path: dist\wincleaner.dist
+
+      - name: Upload artifacts (setup)
+        uses: actions/upload-artifact@v4
+        with:
+          name: WinCleaner-Setup
+          path: releases\*.exe
