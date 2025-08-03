@@ -35,7 +35,7 @@ SolidCompression=yes
 WizardStyle=modern
 WizardImageFile=Setup\ad3.bmp
 WizardSmallImageFile=Setup\sad.bmp
-LicenseFile=Setup\readme.txt
+;LicenseFile=Setup\readme.txt
 PrivilegesRequired=admin
 
 [Languages]
